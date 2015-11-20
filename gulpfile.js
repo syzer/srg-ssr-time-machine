@@ -14,7 +14,8 @@ var destination = 'public/assets';
 var styles = {};
 
 styles['lib.css'] = [
-    'node_modules/foundation-sites/css/foundation.min.css'
+    'node_modules/foundation-sites/css/foundation.min.css',
+    'node_modules/rome/dist/rome.min.css'
 ];
 
 styles['app.css'] = [
@@ -40,11 +41,13 @@ scripts['lib.js'] = [
     'node_modules/foundation-sites/js/vendor/modernizr.js',
     'node_modules/foundation-sites/js/vendor/jquery.js',
     'node_modules/foundation-sites/js/foundation.min.js',
-    'node_modules/foundation-sites/js/foundation/*.js'
+    'node_modules/foundation-sites/js/foundation/*.js',
+    'node_modules/rome/dist/rome.js'
 ];
 
 
 scripts['app.js'] = [
+    'src/scripts/plugins/foundation.dateselector.js',
     'src/scripts/*.js'
 ];
 

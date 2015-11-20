@@ -19,5 +19,8 @@
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.1.1",
     "requirejs": "^2.1.21"
+  },
+  "dependencies": {
+    "rome": "^2.1.22"
   }
 }
