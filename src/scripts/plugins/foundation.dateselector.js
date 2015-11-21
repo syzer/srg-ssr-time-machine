@@ -6,6 +6,8 @@
 
         version : '5.5.3',
 
+        currentDate: 'none',
+
         settings : {
             callback : function () {}
         },
@@ -20,16 +22,28 @@
 
                 self.initDatepicker(selector.find('input[type="text"]').get(0));
             });
+
+            this.currentDate = 'none';
         },
 
         initDatepicker: function (el) {
             var self = this,
-                dp = rome(el);
+                dp = rome(el, {
+                    inputFormat: "YYYY-MM-DD"
+                });
 
             dp.on('data', function (date) {
+
+                // TODO: investigate dual fireing
+                if (self.currentDate === date) {
+                    return;
+                }
+
                 console.log('selected datetime!');
 
                 self.S(el).trigger('dateselected.fndtn.dateselector', date);
+
+                self.currentDate = date;
             });
         },
 
@@ -38,10 +52,7 @@
                 S = this.S;
 
             S(this.scope)
-                .off('.offcanvas')
-                .on('dateselected.fndtn.dateselector', 'input[type="text"]', function (e) {
-                    console.log('callback');
-                })
+                .off('.offcanvas');
         },
 
         reflow : function () {}

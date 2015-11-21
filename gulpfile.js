@@ -15,7 +15,8 @@ var styles = {};
 
 styles['lib.css'] = [
     'node_modules/foundation-sites/css/foundation.min.css',
-    'node_modules/rome/dist/rome.min.css'
+    'node_modules/rome/dist/rome.min.css',
+    'node_modules/fancybox/dist/css/jquery.fancybox.css'
 ];
 
 styles['app.css'] = [
@@ -42,12 +43,15 @@ scripts['lib.js'] = [
     'node_modules/foundation-sites/js/vendor/jquery.js',
     'node_modules/foundation-sites/js/foundation.min.js',
     'node_modules/foundation-sites/js/foundation/*.js',
-    'node_modules/rome/dist/rome.js'
+    'node_modules/rome/dist/rome.js',
+    'node_modules/fancybox/dist/js/jquery.fancybox.js'
 ];
 
 
 scripts['app.js'] = [
     'src/scripts/plugins/foundation.dateselector.js',
+    'src/scripts/plugins/foundation.dataloader.js',
+    'src/scripts/plugins/foundation.broadcasts.js',
     'src/scripts/*.js'
 ];
 
@@ -60,7 +64,7 @@ gulp.task('scripts', function () {
         if (scripts.hasOwnProperty(destinationFile)) {
             gulp.src(scripts[destinationFile])
                 .pipe(concat(destinationFile))
-                .pipe(uglify())
+                //.pipe(uglify())
                 .pipe(gulp.dest(destination + '/scripts'));
         }
     }
@@ -92,7 +96,11 @@ gulp.task('watch', function () {
 gulp.task('default', ['styles', 'scripts', 'watch'], function () {
     browserSync({
         server: {
-            baseDir: 'public'
+            baseDir: 'public',
+            //middleware: function (req, res, next) {
+            //    res.setHeader('Access-Control-Allow-Origin', '*');
+            //    next();
+            //}
         },
         notify: false,
         open: false

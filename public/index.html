@@ -23,7 +23,7 @@
             <section class="top-bar-section">
                 <!-- Right Nav Section -->
                 <ul class="right">
-                    <li class="active"><a href="#">Voice control Active</a></li>
+                    <li><a href="#">Voice control Active</a></li>
                     <li class="has-dropdown">
                         <a href="#">Themes</a>
                         <ul class="dropdown">
@@ -43,13 +43,23 @@
                         <legend>Date and time selection</legend>
                         <div class="large-8 columns">
                             <label for="datetime" class="hide">Input Label</label>
-                            <input id="datetime" type="text" placeholder="Please enter a date and time">
+                            <input id="datetime" type="text" placeholder="Please enter a date and time (ex: 2014-10-24)">
                         </div>
                     </fieldset>
                 </form>
 
-                <div class="broadcasts-list">
-                    Broadcasts list
+
+                <div id="broadcasts" class="broadcasts" data-broadcasts>
+                    <p class="hide">No broadcasts available for </p>
+                    <table class="hide">
+                        <thead>
+                            <tr>
+                                <th>Broadcast</th>
+                                <th>Videos (TV stream only)</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
 
             </div>

@@ -9,6 +9,7 @@
   "devDependencies": {
     "bootstrap": "^3.3.5",
     "browser-sync": "^2.10.0",
+    "fancybox": "^3.0.0",
     "foundation-sites": "^5.5.3",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "^2.1.0",
@@ -18,7 +19,8 @@
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "gulp-watch": "^4.1.1",
-    "requirejs": "^2.1.21"
+    "requirejs": "^2.1.21",
+    "serve": "^1.4.0"
   },
   "dependencies": {
     "rome": "^2.1.22"
